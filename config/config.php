@@ -1,8 +1,9 @@
 <?php
 
-// Start session globally for all files that include this
-session_start();
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Database credentials
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'funkcinis_puslapis');
@@ -14,5 +15,5 @@ date_default_timezone_set('Europe/Vilnius');
 
 // Error reporting (disable in production)
 ini_set('display_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ALL & ~E_NOTICE);
 ?>

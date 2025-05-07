@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     if ($auth->login($username, $password)) {
-        header("Location: dashboard.php"); // sukurkime vėliau
+        header("Location: dashboard.php"); 
         exit;
     } else {
         $message = "Neteisingas vartotojo vardas arba slaptažodis.";

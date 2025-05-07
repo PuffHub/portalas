@@ -15,4 +15,9 @@ class Database {
             die("DB connection failed: " . $e->getMessage());
         }
     }
+
+ 
+    public function getConnection() {
+        return $this->pdo;
+    }
 }

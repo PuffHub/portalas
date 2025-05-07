@@ -1,8 +1,4 @@
-<?php
-// header.php - bendras viršus ir meniu
-?>
-<!DOCTYPE html>
-<html lang="lt">
+<!-- header.php -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,3 +33,4 @@
             </div>
         </div>
     </nav>
+</body>

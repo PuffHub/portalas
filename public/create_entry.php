@@ -24,15 +24,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Įrašyti į DB
         $sql = "INSERT INTO entries (user_id, title, description, location, timestamp, ip_address) 
                 VALUES (:user_id, :title, :description, :location, :timestamp, :ip)";
-        $stmt = $auth->pdo->prepare($sql);
-        $stmt->execute([
-            'user_id' => $userId,
-            'title' => $title,
-            'description' => $description,
-            'location' => $location,
-            'timestamp' => $timestamp,
-            'ip' => $ip
-        ]);
+      $auth = new Auth();
+$pdo = $auth->getPdo(); // Gaunam PDO ryšį per metodą
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute([
+    'user_id' => $userId,
+    'title' => $title,
+    'description' => $description,
+    'location' => $location,
+    'timestamp' => $timestamp,
+    'ip' => $ip
+]);
 
         $message = "Įrašas buvo sėkmingai sukurtas!";
     } else {

@@ -1,5 +1,4 @@
 <?php
-// footer.php - bendras pabaiga
 ?>
     <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; <?php echo date("Y"); ?> Jūsų įmonės pavadinimas. Visi teisės saugomos.</p>
